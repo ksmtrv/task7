@@ -1,23 +1,23 @@
-package ru.vsu.cs.GUI.logic;
+package ru.vsu.cs.logic;
 
-public class Logic {
+public class AmountCloseNumbers {
 
     public static int getAmountCloseNumbers(int[] array) {
 
         double average = getAverage(array);
         int l = getLowestNearestValue(array, average);
         int h = getHighestNearestValue(array, average);
-        int k;
+        int res;
         if ((average - l) == 0.5) {
-            k = countAmountIdenticalNumbers(array, l, h);
+            res = countAmountIdenticalNumbers(array, l, h);
         } else {
-            int b = getNearestNumber(average, l, h);
-            k = countAmountIdenticalNumbers1(array, b);
+            int n = getNearestNumber(average, l, h);
+            res = countAmountIdenticalNumbers1(array, n);
         }
-        return k;
+        return res;
     }
 
-    private static double getAverage(int[] array) {//средне арифметическое значение
+    private static double getAverage(int[] array) {
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
@@ -25,7 +25,7 @@ public class Logic {
         return sum / array.length;
     }
 
-    private static int getLowestNearestValue(int[] array, double average) {//находим меньшее рядом стоящее
+    private static int getLowestNearestValue(int[] array, double average) {
         int l = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] <= average && array[i] >= l) {
@@ -35,7 +35,7 @@ public class Logic {
         return l;
     }
 
-    private static int getHighestNearestValue(int[] array, double average) {//находим большее рядом стоящее
+    private static int getHighestNearestValue(int[] array, double average) {
         int h = array[0];
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= average && array[i] >= h) {
@@ -46,18 +46,18 @@ public class Logic {
         return h;
     }
 
-    private static int getNearestNumber(double average, int l, int h) {//выясняем какое ближе
-        int b;
+    private static int getNearestNumber(double average, int l, int h) {
+        int n;
         if ((average - l) == 0) {
-            b = l;
+            n = l;
         } else if ((average - l) < (h - average)) {
-            b = l;
+            n = l;
         } else
-            b = h;
-        return b;
+            n = h;
+        return n;
     }
 
-    private static int countAmountIdenticalNumbers(int[] array, int l, int h) {//если 0.5 расстояние то считаем так
+    private static int countAmountIdenticalNumbers(int[] array, int l, int h) {
         int j = 0;
         for (int i = 0; i < array.length; i++) {
             if (h == array[i]) {
@@ -70,7 +70,7 @@ public class Logic {
         return j;
     }
 
-    private static int countAmountIdenticalNumbers1(int[] array, int b) {//узнаем кол-во нужных элементов
+    private static int countAmountIdenticalNumbers1(int[] array, int b) {
         int j = 0;
         for (int i = 0; i < array.length; i++) {
             if (b == array[i]) {

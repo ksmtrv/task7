@@ -1,11 +1,9 @@
-package ru.vsu.cs.GUI;
-
-import ru.vsu.cs.GUI.view.View;
+package ru.vsu.cs.gui;
 
 public class MainGUI {
 
     public static void main(String[] args) {
-        View view = new View();
-        view.setSize(600, 250);
+        Frame frame = new Frame();
+        frame.setSize(600, 250);
     }
 }

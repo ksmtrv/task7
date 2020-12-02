@@ -1,23 +1,21 @@
-package ru.vsu.cs.GUI.view;
-
-import ru.vsu.cs.GUI.controller.ControllerButtonResult;
+package ru.vsu.cs.gui;
 
 import javax.swing.*;
 
-public class View extends JFrame {
+public class Frame extends JFrame {
 
     private JPanel mainPanel;
     private JButton buttonPrintResultArray;
     private JTextField textReadField;
     private JTextField textResultField;
 
-    public View() {
-        super("Tack 7");
+    public Frame() {
+        super("Task 7");
 
         setContentPane(mainPanel);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
 
-        buttonPrintResultArray.addActionListener(new ControllerButtonResult(textReadField, textResultField));
+        buttonPrintResultArray.addActionListener(new ListenerButtonResult(textReadField, textResultField));
     }
 }

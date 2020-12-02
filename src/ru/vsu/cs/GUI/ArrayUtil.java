@@ -1,4 +1,4 @@
-package ru.vsu.cs.GUI.utils;
+package ru.vsu.cs.gui;
 
 import java.util.ArrayList;
 import java.util.List;
