@@ -70,10 +70,10 @@ public class AmountCloseNumbers {
         return j;
     }
 
-    private static int countAmountIdenticalNumbers1(int[] array, int b) {
+    private static int countAmountIdenticalNumbers1(int[] array, int n) {
         int j = 0;
         for (int i = 0; i < array.length; i++) {
-            if (b == array[i]) {
+            if (n == array[i]) {
                 j++;
             }
         }

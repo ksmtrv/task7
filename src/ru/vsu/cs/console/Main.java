@@ -26,9 +26,9 @@ public class Main {
         return scanner.nextInt();
     }
 
-    private static void printSomething(int[] array, int k) {
+    private static void printSomething(int[] array, int res) {
         String arr = Arrays.toString(array);
         System.out.println("Original array --> " + arr +
-                ". The amount of the estimated value --> " + k);
+                ". The amount of the estimated value --> " + res);
     }
 }
